@@ -1,6 +1,6 @@
 ## 介绍
 
-一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)
+一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。
 
 ## 颜色校正(ColorCorrect)
 
@@ -34,3 +34,11 @@ Prewitt 算子就是把 Sobel 里面的所有 2 都改成 1，效果上区别不
 也可以使用代码来查看：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/GetDepthAndNormal04.jpg" width="600px"/>   
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/GetDepthAndNormal05.jpg" width="600px"/>   
+记录一下这个函数，DecodeFloatRG 用来在 tex2D 之后获取 depth；DecodeViewNormalStereo 用来在 tex2D 后获取 normal。  
+```
+inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
+{
+    depth = DecodeFloatRG (enc.zw);
+    normal = DecodeViewNormalStereo (enc);
+}
+```
