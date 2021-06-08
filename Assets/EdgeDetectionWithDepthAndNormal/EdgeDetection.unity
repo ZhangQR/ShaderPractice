@@ -568,14 +568,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1090956467}
-  m_LocalRotation: {x: -0.2552847, y: 0.29661068, z: -0.08261613, w: 0.91652954}
+  m_LocalRotation: {x: -0.24549198, y: 0.2957125, z: -0.085775994, w: 0.91920096}
   m_LocalPosition: {x: 0, y: -0.7361673, z: 0.444587}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1457467313}
   m_Father: {fileID: 729191492}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -24.768, y: 40.184, z: -19.485}
+  m_LocalEulerAnglesHint: {x: -23.615, y: 39.739, z: -19.303}
 --- !u!65 &1090956469
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -940,6 +940,7 @@ GameObject:
   - component: {fileID: 1921626898}
   - component: {fileID: 1921626897}
   - component: {fileID: 1921626900}
+  - component: {fileID: 1921626901}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1005,13 +1006,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921626896}
-  m_LocalRotation: {x: 0.098634474, y: -0, z: -0, w: 0.99512374}
-  m_LocalPosition: {x: 0.84, y: 2.08, z: -9.78}
+  m_LocalRotation: {x: 0.10547587, y: -0, z: -0, w: 0.9944219}
+  m_LocalPosition: {x: 0.84, y: 2.27, z: -9.58}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 11.321, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 12.109, y: 0, z: 0}
 --- !u!114 &1921626900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1029,5 +1030,24 @@ MonoBehaviour:
   edgeColor: {r: 0, g: 0, b: 0, a: 1}
   backgroundColor: {r: 1, g: 1, b: 1, a: 1}
   sampleDistance: 1
-  sensitivityDepth: 1
-  sensitivityNormals: 1
+  sensitivityDepth: 34.76
+  sensitivityNormals: 13.08
+  UseDepth: 1
+  UseNormal: 1
+--- !u!114 &1921626901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921626896}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa657e64cc305ae45bd34d1d8bbf46f6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  edgeDetectShader: {fileID: 4800000, guid: 7806f1c3af3867e43914b9ae90faef43, type: 3}
+  edgesOnly: 0.399
+  edgeLevel: 2.33
+  edgeColor: {r: 0, g: 0, b: 0, a: 1}
+  backgroundColor: {r: 1, g: 1, b: 1, a: 1}
