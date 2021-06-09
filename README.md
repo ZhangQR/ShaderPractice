@@ -24,7 +24,7 @@ Prewitt 算子就是把 Sobel 里面的所有 2 都改成 1，效果上区别不
 
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetection04.jpg" width="600px"/>   
 
-## 获取深度和法线纹理
+## 获取深度和法线纹理(GetDepthAndNormal)
 
 还是后处理，先简单搭一个场景：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/GetDepthAndNormal01.jpg" width="600px"/>   
@@ -43,7 +43,7 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 }
 ```
 
-## 再谈边缘检测
+## 再谈边缘检测(EdgeDetectionWithDepthAndNormal)
 
 用之前的方法进行边缘检测其实只是在图像上做处理，会出现一些问题，比如说阴影，法线贴图都会被检测到，如图所示：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetectionPro01.jpg" width="600px"/>   
@@ -58,7 +58,7 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 你可以像我一样把两种情况结合起来使用，也就是取了并集，也可以自行尝试，最后的效果图：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetectionPro06.jpg" width="600px"/>   
 
-## 卡通渲染
+## 卡通渲染(CartoonRender)
 
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender01.gif" width="600px"/>   
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender02.gif" width="600px"/>   
