@@ -43,7 +43,8 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 }
 ```
 
-### 再谈边缘检测
+## 再谈边缘检测
+
 用之前的方法进行边缘检测其实只是在图像上做处理，会出现一些问题，比如说阴影，法线贴图都会被检测到，如图所示：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetectionPro01.jpg" width="600px"/>   
 所以这次我们使用 Roberts 算子和深度法线纹理来进行边缘检测，依旧是一种后处理技术。我做了一点改动，比如说将乘法改成了加法，效果会更明显一点。因为左上角到右下角算出有一条边界，但右上角到左下角边界不明显，如果乘的话，结果就是边界不明显，但实际上只要有一个方向有很明显的边界应该就算做有边界才对，乘法的效果如下（除了这张其他都是加法的效果）：  
@@ -56,3 +57,8 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetectionPro05.jpg" width="600px"/>   
 你可以像我一样把两种情况结合起来使用，也就是取了并集，也可以自行尝试，最后的效果图：  
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeDetectionPro06.jpg" width="600px"/>   
+
+## 卡通渲染
+
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender01.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender02.gif" width="600px"/>   

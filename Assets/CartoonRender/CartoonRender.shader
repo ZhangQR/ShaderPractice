@@ -126,12 +126,14 @@ Shader "ZhangQr/CartoonRender"
                 
                 //spec = step(_SpecThreadhold,spec); // 直接这样写会有较明显的锯齿
 
-                //fixed w = fwidth(spec) * 2.0;
-                spec = smoothstep(_SpecThreadhold-0.01f,_SpecThreadhold,spec);
+                //fixed w = fwidth(spec) * 2.0f; // 这样写会有毛刺 // fwidth(spec) = abs(ddy(spec)) + abs(ddx(spec))
+                //spec = smoothstep(_SpecThreadhold - w,_SpecThreadhold,spec);
                 
-                //spec = lerp(0, 1, smoothstep(-w, w, spec + _SpecThreadhold - 1))* step(0.0001, _SpecThreadhold);
+                //spec = smoothstep(_SpecThreadhold - 0.15f,_SpecThreadhold,spec); // 当常数很小的时候，跟下面几乎没差
+                                                                                    // 当常数大点的时候会有边缘渐变，不像卡渲
                 
-                
+                fixed w = abs(ddy(spec)) * abs(ddx(spec)); // 这样写会有毛刺 // fwidth(spec) = abs(ddy(spec)) * abs(ddx(spec))
+                spec = smoothstep(_SpecThreadhold - w,_SpecThreadhold,spec);
                 
                 fixed3 spacularColor = _Spacular * spec;
                 fixed3 color = ambientColor + diffuseColor + spacularColor;
