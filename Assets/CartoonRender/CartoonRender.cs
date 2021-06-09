@@ -4,15 +4,9 @@ using UnityEngine;
 
 public class CartoonRender : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    public float RotateSpeed;
+    private void Update()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        transform.Rotate(Vector3.up * RotateSpeed, Space.Self);
     }
 }
