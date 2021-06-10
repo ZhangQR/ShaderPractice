@@ -1093,6 +1093,7 @@ GameObject:
   - component: {fileID: 1921626898}
   - component: {fileID: 1921626897}
   - component: {fileID: 1921626900}
+  - component: {fileID: 1921626901}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1117,7 +1118,7 @@ Camera:
   m_GameObject: {fileID: 1921626896}
   m_Enabled: 1
   serializedVersion: 2
-  m_ClearFlags: 1
+  m_ClearFlags: 2
   m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
@@ -1158,13 +1159,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921626896}
-  m_LocalRotation: {x: -0.046185404, y: -0.42569083, z: -0.02176232, w: 0.9034271}
-  m_LocalPosition: {x: 4.16, y: 2.0319557, z: -9.33}
+  m_LocalRotation: {x: 0.08489412, y: -0.09865467, z: 0.01294264, w: 0.99140954}
+  m_LocalPosition: {x: 0.14, y: 1.78, z: -10.28}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: -5.853, y: -50.459, z: 0}
+  m_LocalEulerAnglesHint: {x: 9.839, y: -11.321, z: 0.518}
 --- !u!114 &1921626900
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1180,7 +1181,21 @@ MonoBehaviour:
   StartPoint: {fileID: 1803294783}
   EndPoint: {fileID: 1013273283}
   Center: {fileID: 2084035751}
-  MoveSpeed: 3
+  MoveSpeed: 0.1
+--- !u!114 &1921626901
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1921626896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d677ef721fc24c40b360493ec398dde, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MotionBlurShader: {fileID: 4800000, guid: 57d43ccca0f584144824cbca43044f17, type: 3}
+  BlurAmount: 0.3
 --- !u!1 &2084035750
 GameObject:
   m_ObjectHideFlags: 0

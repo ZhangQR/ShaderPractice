@@ -62,3 +62,8 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender01.gif" width="600px"/>   
 <img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender02.gif" width="600px"/>   
+
+## 运动模糊(MotionBlur)
+
+<img src="https://gitee.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/MotionBlur01.gif" width="600px"/>   
+<img src="https://gitee.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>   
