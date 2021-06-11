@@ -65,10 +65,17 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 
 ## 运动模糊(MotionBlur)
 
+缺点：拖尾效果很强的话，即使静止了，也会有残影消不掉。  
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur01.gif" width="600px"/>   
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>  
 
 ## 使用深度图的运动模糊(MotionBlurWithDepth)
 
 先还原出现在某一个像素点在世界坐标的位置上，然后计算出该位置上一帧的 NDC 位置，计算出 UV 偏移。  
+缺点：是根据相机来的，物体动，相机不动，是不会有效果的；重构世界坐标消耗很大。  
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlurWithDepth01.gif" width="600px"/>  
+
+## 全局雾效(GlobalFog)
+
+使用了一种更高效的还原世界坐标的方式，正交与透视需要分开来处理，这里是只有透视的。  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/GlobalFog01.gif" width="600px"/>  
