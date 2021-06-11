@@ -66,4 +66,9 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 ## 运动模糊(MotionBlur)
 
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur01.gif" width="600px"/>   
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>   
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>  
+
+## 使用深度图的运动模糊(MotionBlurWithDepth)
+
+先还原出现在某一个像素点在世界坐标的位置上，然后计算出该位置上一帧的 NDC 位置，计算出 UV 偏移。  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlurWithDepth01.gif" width="600px"/>  
