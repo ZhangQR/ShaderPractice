@@ -79,3 +79,7 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 
 使用了一种更高效的还原世界坐标的方式，正交与透视需要分开来处理，这里是只有透视的。  
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/GlobalFog01.gif" width="600px"/>  
+
+## 带噪声的全局雾效(GlobalFogWithNoise)
+
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/GlobalFogWithNoise01.gif" width="600px"/>  

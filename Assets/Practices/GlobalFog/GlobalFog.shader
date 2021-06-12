@@ -77,8 +77,9 @@ Shader "ZhangQr/PostPorocess/GlobalFog"
             
             float f = (_MaxHeight - worldPosition.y) / (_MaxHeight - _MinHeight);
             f = saturate(f * _FogDensity);
-            //fixed3 col = tex2D(_MainTex,i.uv).xyz * (1 - f) + _FogColor.xyz * f;
-            fixed3 col = lerp(tex2D(_MainTex,i.uv).xyz,_FogColor.xyz,f);
+
+            fixed3 col = tex2D(_MainTex,i.uv).xyz * (1 - f) + _FogColor.xyz * f;
+            //fixed3 col = lerp(tex2D(_MainTex,i.uv).xyz,_FogColor.xyz,f);
 
             return fixed4(col,1);
         }
