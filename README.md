@@ -89,3 +89,8 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 使用这个[脚本](https://docs.unity3d.com/cn/2018.4/ScriptReference/Camera.RenderToCubemap.html)，可以将环境渲染到正方体贴图上，然后根据入射角等于反射角的原理算出反射的方向，再在这个正方体贴图上采样即可。  
 
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Reflection01.gif" width="600px"/>  
+
+## 折射(Refraction)
+
+
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Refraction01.gif" width="600px"/>  

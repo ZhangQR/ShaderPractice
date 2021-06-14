@@ -193,7 +193,7 @@ PrefabInstance:
     - target: {fileID: 2300000, guid: 354198794248843da8555877937ee568, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: a0d6058f54d6e5847ab1331c180629bd, type: 2}
+      objectReference: {fileID: 2100000, guid: 27d9930919cc2694a9854ef2972b02e6, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 354198794248843da8555877937ee568, type: 3}
 --- !u!1 &740341509
@@ -339,7 +339,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.01
   far clip plane: 1000
   field of view: 60
   orthographic: 0

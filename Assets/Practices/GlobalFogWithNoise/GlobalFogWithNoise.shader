@@ -1,4 +1,4 @@
-Shader "ZhangQr/PostPorocess/GlobalFogWithNoise"
+Shader "ZhangQr/PostProcess/GlobalFogWithNoise"
 {
     Properties
     {

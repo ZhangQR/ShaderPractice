@@ -1,4 +1,4 @@
-Shader "ZhangQr/PostPorocess/GlobalFog"
+Shader "ZhangQr/PostProcess/GlobalFog"
 {
     Properties
     {
