@@ -94,3 +94,16 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 
 
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Refraction01.gif" width="600px"/>  
+
+## 靠近相机边缘消失(EdgeFade)
+
+来源：https://forum.unity.com/threads/what-does-the-function-computescreenpos-in-unitycg-cginc-do.294470/     #24  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/EdgeFade01.gif" width="600px"/>  
+
+## 玻璃(Glass)
+
+主要由三部分构成：  
+- 自身贴图
+- 反射，需要一个环境立方体贴图
+- 折射，比较巧妙... 只要取除了此物体之外的渲染图(所有 Queue 要设置成 Transparent，不然不能保证它在所有图像后面渲染)，在上面找到每个点对应的像素，那就是它的折射图像，要用到 `GrabPass`，如果只应用折射的这一部分，那么在场景中将是完全透明的（其实不是透明，可以理解为变色龙的 "拟态"）。  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>  
