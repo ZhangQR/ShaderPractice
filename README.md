@@ -106,12 +106,15 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 - 自身贴图
 - 反射，需要一个环境立方体贴图
 - 折射，比较巧妙... 只要取除了此物体之外的渲染图(所有 Queue 要设置成 Transparent，不然不能保证它在所有图像后面渲染)，在上面找到每个点对应的像素，然后根据切线空间下的法线进行扰动。  
+
 纯反射：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>    
+
 纯折射：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass02.gif" width="600px"/>  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass02.gif" width="600px"/>   
+
 相结合：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass03.gif" width="600px"/> 
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass03.gif" width="600px"/>   
 
 ## 水波(Water)
 
