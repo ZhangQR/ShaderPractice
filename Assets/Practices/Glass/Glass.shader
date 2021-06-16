@@ -7,6 +7,7 @@ Shader "ZhangQr/Glass"
         _EnvirnmentCube("EnvirnmentCube",Cube) = "SkyBox"{}
         _RelectionRatio("RelectionRatio",float) = 1
         _RefractionRatio("RefractionRatio",float) = 1
+        _RefractionDistortion("RefractionDistortion",float) = 1
     }
     SubShader
     {
@@ -31,6 +32,7 @@ Shader "ZhangQr/Glass"
             samplerCUBE _EnvirnmentCube;
             float _RelectionRatio;
             float _RefractionRatio;
+            float _RefractionDistortion;
 
             struct appdata
             {
@@ -79,10 +81,14 @@ Shader "ZhangQr/Glass"
                 float3 worldSpaceNormal = mul(transformMatrix,tangentNormal);
 
                 // 根据法线反射环境
-                float3 worldSpaceViewDir = UnityWorldSpaceViewDir(i.worldPosition);
+                float3 worldSpaceViewDir = normalize(UnityWorldSpaceViewDir(i.worldPosition));
                 float3 relectionDir = reflect(-worldSpaceViewDir,worldSpaceNormal);
                 fixed3 relectionCol = texCUBE(_EnvirnmentCube,relectionDir);
-                fixed3 refractionCol = tex2D(_RefractionTex,i.screenUV.xy/i.screenUV.w).xyz;
+
+                // 计算折射
+                float2 refractionOffset = i.screenUV.xy/i.screenUV.w;
+                refractionOffset.xy += _RefractionDistortion * tangentNormal.xy;
+                fixed3 refractionCol = tex2D(_RefractionTex,refractionOffset).xyz;
                 
                 // 混合自身贴图、反射、折射
                 fixed3 refractionAndReflection = refractionCol * _RefractionRatio + (1 - _RefractionRatio) * relectionCol;

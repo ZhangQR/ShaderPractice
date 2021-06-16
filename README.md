@@ -105,5 +105,15 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 主要由三部分构成：  
 - 自身贴图
 - 反射，需要一个环境立方体贴图
-- 折射，比较巧妙... 只要取除了此物体之外的渲染图(所有 Queue 要设置成 Transparent，不然不能保证它在所有图像后面渲染)，在上面找到每个点对应的像素，那就是它的折射图像，要用到 `GrabPass`，如果只应用折射的这一部分，那么在场景中将是完全透明的（其实不是透明，可以理解为变色龙的 "拟态"）。  
+- 折射，比较巧妙... 只要取除了此物体之外的渲染图(所有 Queue 要设置成 Transparent，不然不能保证它在所有图像后面渲染)，在上面找到每个点对应的像素，然后根据切线空间下的法线进行扰动。  
+纯反射：  
 <img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>  
+纯折射：  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass02.gif" width="600px"/>  
+相结合：  
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass03.gif" width="600px"/> 
+
+## 水波(Water)
+
+跟玻璃差不多，不同的是法线来自一张噪声图,还有混合的时候使用的是 Schlick 菲涅耳近似等式。    
+<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Water01.gif" width="600px"/> 
