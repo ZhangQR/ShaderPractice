@@ -1,8 +1,8 @@
 ## 介绍
 
 一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。  
-github 链接：https://github.com/ZhangQR/ShaderPractice
-码云 链接（下载真滴快！）：https://gitee.com/zhangqrr/ShaderPractice
+github 链接：https://github.com/ZhangQR/ShaderPractice  
+码云 链接（下载真滴快！）：https://github.com/ZhangQR/ShaderPractice
 
 ## 颜色校正(ColorCorrect)
 
@@ -62,45 +62,45 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 
 ## 卡通渲染(CartoonRender)
 
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/CartoonRender01.gif" width="600px"/>   
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/CartoonRender02.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender01.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/CartoonRender02.gif" width="600px"/>   
 
 ## 运动模糊(MotionBlur)
 
 缺点：拖尾效果很强的话，即使静止了，也会有残影消不掉。  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur01.gif" width="600px"/>   
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/MotionBlur01.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/MotionBlur02.gif" width="600px"/>  
 
 ## 使用深度图的运动模糊(MotionBlurWithDepth)
 
 先还原出现在某一个像素点在世界坐标的位置上，然后计算出该位置上一帧的 NDC 位置，计算出 UV 偏移。  
 缺点：是根据相机来的，物体动，相机不动，是不会有效果的；重构世界坐标消耗很大。  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/MotionBlurWithDepth01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/MotionBlurWithDepth01.gif" width="600px"/>  
 
 ## 全局雾效(GlobalFog)
 
 使用了一种更高效的还原世界坐标的方式，正交与透视需要分开来处理，这里是只有透视的。  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/GlobalFog01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/GlobalFog01.gif" width="600px"/>  
 
 ## 带噪声的全局雾效(GlobalFogWithNoise)
 
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/GlobalFogWithNoise01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/GlobalFogWithNoise01.gif" width="600px"/>  
 
 ## 反射(Reflection)
 
 使用这个[脚本](https://docs.unity3d.com/cn/2018.4/ScriptReference/Camera.RenderToCubemap.html)，可以将环境渲染到正方体贴图上，然后根据入射角等于反射角的原理算出反射的方向，再在这个正方体贴图上采样即可。  
 
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Reflection01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Reflection01.gif" width="600px"/>  
 
 ## 折射(Refraction)
 
 
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Refraction01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Refraction01.gif" width="600px"/>  
 
 ## 靠近相机边缘消失(EdgeFade)
 
 来源：https://forum.unity.com/threads/what-does-the-function-computescreenpos-in-unitycg-cginc-do.294470/     #24  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/EdgeFade01.gif" width="600px"/>  
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/EdgeFade01.gif" width="600px"/>  
 
 ## 玻璃(Glass)
 
@@ -110,15 +110,15 @@ inline void DecodeDepthNormal( float4 enc, out float depth, out float3 normal )
 - 折射，比较巧妙... 只要取除了此物体之外的渲染图(所有 Queue 要设置成 Transparent，不然不能保证它在所有图像后面渲染)，在上面找到每个点对应的像素，然后根据切线空间下的法线进行扰动。  
 
 纯反射：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>    
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Glass01.gif" width="600px"/>    
 
 纯折射：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass02.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Glass02.gif" width="600px"/>   
 
 相结合：  
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Glass03.gif" width="600px"/>   
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Glass03.gif" width="600px"/>   
 
 ## 水波(Water)
 
 跟玻璃差不多，不同的是法线来自一张噪声图,还有混合的时候使用的是 Schlick 菲涅耳近似等式。    
-<img src="https://gitee.com/zhangqrr/ShaderPractice/raw/master/ReadmeImages/Water01.gif" width="600px"/> 
+<img src="https://github.com/ZhangQR/ShaderPractice/raw/master/ReadmeImages/Water01.gif" width="600px"/> 
