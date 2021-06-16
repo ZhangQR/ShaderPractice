@@ -1,6 +1,8 @@
 ## 介绍
 
-一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。
+一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。  
+github 链接：https://github.com/ZhangQR/ShaderPractice
+码云 链接（下载真滴快！）：https://gitee.com/zhangqrr/ShaderPractice
 
 ## 颜色校正(ColorCorrect)
 
