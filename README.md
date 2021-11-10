@@ -1,6 +1,21 @@
 ## 介绍
 
-一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。
+一些 Shader 的练习，有个哥们把 Unity3D build-in Shader 放到了自己的 Github 里面，并且按照版本打了 Tag，目前只到 2019，不知道断更是因为官方没有更新还是其他原因，不过用来查询内置的函数是真滴方便~ [链接](https://github.com/ZhangQR/Unity-Built-in-Shaders)。项目下载之后，可以将显示改成 16:9，不然 free aspect 有可能会看到显示之外的东西。  
+
+## 反射模型
+https://www.jianshu.com/p/c31134f31325
+
+## 贴图
+https://www.jianshu.com/p/cbaa9a1780e6  
+
+## 透明
+https://www.jianshu.com/p/2bab777adf89  
+
+## 动画 
+https://www.jianshu.com/p/4f25ab79709b  
+
+## 后处理
+https://www.jianshu.com/p/c92a979f4a9e  
 
 ## 颜色校正(ColorCorrect)
 
