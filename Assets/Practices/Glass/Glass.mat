@@ -82,7 +82,7 @@ Material:
     - _Parallax: 0.02
     - _RefractionDistortion: 0.05
     - _RefractionRatio: 0.5
-    - _RelectionRatio: 0.5
+    - _RelectionRatio: 0.02
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
     - _SrcBlend: 1
